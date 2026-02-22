@@ -118,7 +118,6 @@ module.exports = {
   // ---------------------------
   addEmployee: async ({ input }, req) => {
     try {
-      // Optional auth check:
       // if (!req.user) throw new Error("Unauthorized");
 
       const existing = await Employee.findOne({ email: input.email });
@@ -133,7 +132,6 @@ module.exports = {
 
   updateEmployee: async ({ id, input }, req) => {
     try {
-      // Optional auth check:
       // if (!req.user) throw new Error("Unauthorized");
 
       const employee = await Employee.findByIdAndUpdate(id, input, {
@@ -150,7 +148,6 @@ module.exports = {
 
   deleteEmployee: async ({ id }, req) => {
     try {
-      // Optional auth check:
       // if (!req.user) throw new Error("Unauthorized");
 
       const employee = await Employee.findByIdAndDelete(id);
